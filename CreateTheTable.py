@@ -4,9 +4,9 @@ import os
 
 # Настройки подключения к MySQL
 db_config = {
-    'host': 'localhost',
-    'user': 'RUSEL',
-    'password': '102026102Rus',
+    'host': '******',
+    'user': '*******',
+    'password': '*******',
     'database': 'online_shop'
 }
 
