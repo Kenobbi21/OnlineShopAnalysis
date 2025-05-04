@@ -5,15 +5,15 @@ import main
 
 # Генерация данных
 data = pd.DataFrame({
-    'months': np.arange(25),
-    'percents': main.digits
+    'population': main.values[0].keys(),
+    'avgvalue': main.values[0].values()
 })
 
 # Линейный график
-st.line_chart(data, x='months', y='percents')
+st.line_chart(data, x='population', y='avgvalue')
 
 # Столбчатая диаграмма
-st.bar_chart(data, x='months', y='percents')
+st.bar_chart(data, x='population', y='avgvalue')
 
 # Диаграмма площадей
-st.area_chart(data, x='months', y='percents')
+st.area_chart(data, x='population', y='avgvalue')
