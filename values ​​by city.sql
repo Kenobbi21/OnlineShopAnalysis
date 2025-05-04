@@ -4,7 +4,6 @@ FROM customers AS C JOIN orders AS O ON C.customer_id = O.order_customer_id JOIN
 WHERE YEAR(order_purchase_timestamp) = "2017"
 GROUP BY customer_city
 ORDER BY customers desc
-limit 152
 );
 
 
@@ -15,4 +14,3 @@ FROM customers AS C JOIN orders AS O ON C.customer_id = O.order_customer_id JOIN
 WHERE YEAR(order_purchase_timestamp) = "2018"
 GROUP BY customer_city
 ORDER BY customers desc
-limit 152
