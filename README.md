@@ -21,6 +21,7 @@ I can offer to Olist store next sollutions:
 3. Retention and repeat purchases (Retention): Email and SMS Marketing, loyalti program, personalized recomendations
 4. Viral mechanics (Referral): bring friend and get discounts
 And etc.
+
 Now look at avgnum growth, about 40% of negative values in the range of cities we have identified. next sollutions can help solve this problem:
 1. Offer to customers additional goods which can complement the main product
 2. Upsell & Cross-sell or personalized recomendations, offer more expensive alternative 
