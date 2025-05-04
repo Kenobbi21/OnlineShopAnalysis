@@ -15,18 +15,17 @@ For first i downloaded dataset from Kaggle https://www.kaggle.com/datasets/olist
 in this dashboards you can notice pretty good dynamics of the total customers growth it is 18% and less then 1% of avg check price growth which is not so good. But this calculations have been made based on values by city(values by city.sql), that data reflects the situation in relation to all cities, without taking into account their importance, so I also conducted a research on general data (revenue.sql, test.py), which provides a more correct picture in terms of the entire business.
 We can see a growth between 2017 and 2018 in 22% in total and less than 1% by average order check, that means that the company is developing but need to put more effort to increase the average check just like in first research.
 By using (values by city.sql) we can see the percentage difference between 2017 and 2018 for each city in detail, (https://github.com/user-attachments/assets/f40daf8e-5dfe-4441-8788-0c095a739e3a) (first 28 cities) in that photo for example we can see that the city of Sao Paulo showed a growth of 29.2% in the number of customers and 31.8% growth in the total sum of check, impressive isnt it? The second one, Rio De Janeiro showed much worse results, growth of 4.1% in the number of customers and growth of 1.5% in total sum of check. Besides the Rio there is 3 cities which showed less than 10% of customers growth is really low accordingly to avg values and that means that this cities need more attention. 
-I can offer to Olist store next sollutions:
-1. Targeted advertising in social media.
-2. Increasing first order conversion.
-3. Retention and repeat purchases (Retention): Email and SMS Marketing, loyalti program, personalized recomendations
-4. Viral mechanics (Referral): bring friend and get discounts
-And etc.
-
-Now look at avgnum growth, about 40% of negative values in the range of cities we have identified. next sollutions can help solve this problem:
-1. Offer to customers additional goods which can complement the main product
-2. Upsell & Cross-sell or personalized recomendations, offer more expensive alternative 
-3. Dynamic pricing and discounts, for example: "this is the last day you can buy this phone for only 500$ instead of 700$"
-4. Improve UX/UI to encourage purchases, delete extra steps to buy something, for example you can add a button buy now instead of add to basket.
-5. Loyalty and Subscription Programs
-6. FOMO, put pressure on the buyer with a missed opportunity to make a good purchase.
+ I can offer to Olist store next sollutions:
+ 1. Targeted advertising in social media.
+ 2. Increasing first order conversion.
+ 3. Retention and repeat purchases (Retention): Email and SMS Marketing, loyalti program, personalized recomendations
+ 4. Viral mechanics (Referral): bring friend and get discounts
+ And etc.
+ Now look at avgnum growth, about 40% of negative values in the range of cities we have identified. next sollutions can help solve this problem:
+ 1. Offer to customers additional goods which can complement the main product
+ 2. Upsell & Cross-sell or personalized recomendations, offer more expensive alternative 
+ 3. Dynamic pricing and discounts, for example: "this is the last day you can buy this phone for only 500$ instead of 700$"
+ 4. Improve UX/UI to encourage purchases, delete extra steps to buy something, for example you can add a button buy now instead of add to basket.
+ 5. Loyalty and Subscription Programs
+ 6. FOMO, put pressure on the buyer with a missed opportunity to make a good purchase.
 
