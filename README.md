@@ -31,3 +31,4 @@ By using (values by city.sql) we can see the percentage difference between 2017 
  5. Loyalty and Subscription Programs
  6. FOMO, put pressure on the buyer with a missed opportunity to make a good purchase.
 
+- Now making a sales funnel. This database does not provide all necessary information for making full-fledged sales funnel so only way i can offer is count how much succesful orders do we have minus "unavaliable" and "canceled" orders. As a result(SalesFunnel.sql) 1.26% of unsuccesful orders and it is a great result compare to other marketplaces for comparison Amazon has 5-10% of it. 
