@@ -1,1 +1,4 @@
 *.sql linguist-language=SQL
+git add .gitattributes
+git commit -m "Update .gitattributes"
+git push
