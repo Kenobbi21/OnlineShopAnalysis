@@ -53,5 +53,7 @@ By using (values by city.sql) we can see the percentage difference between 2017 
 	  
 And as a result to reduce negative customer experience, the marketplace needs to: 
     - Strictly control sellers (fines, blocking).
+    
     - Invest in logistics and automation (AI, scanners, chatbots).
+    
     - Provide transparency to buyers (tracking, guarantees).
