@@ -1,5 +1,6 @@
 import pymysql
 from collections import defaultdict
+
 # Параметры подключения
 config = {
     'host': 'localhost',
@@ -9,6 +10,8 @@ config = {
 }
 # Подключаемся к MySQL
 connection = pymysql.connect(**config)
+
+
 def dataforvisual():
     count = 0
     sum = 0
@@ -30,13 +33,11 @@ def dataforvisual():
                     values[row[1]] = int(row[3])
                     cities[row[1]] = row[0]
 
-                return values,cities
+                return values, cities
             else:
                 print("Запрос выполнен (не SELECT).")
-        connection.commit()
     finally:
         connection.close()
-
 
 
 def diffcounter():
@@ -52,7 +53,22 @@ def diffcounter():
             print(
                 f"revenue growth: {round((gencounter - 1) * 100, 1)}% \navg value growth: {round((avgcounter - 1) * 100, 1)}% ")
         file.close()
+
+
 diffcounter()
 values = dataforvisual()
 sorted(values[0])
 sorted(values[1])
+
+connection = pymysql.connect(**config)
+def reviews_reader():
+    with connection.cursor() as cursor:
+        with open("order_reviews.sql", "r", encoding="utf-8") as file:
+            result = file.read()
+            cursor.execute(result)
+            result = cursor.fetchall()
+            for row in result:
+                print(row[4])
+        file.close()
+val = reviews_reader()
+print(val)
