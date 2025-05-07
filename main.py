@@ -1,5 +1,10 @@
 import pymysql
 from collections import defaultdict
+from googletrans import Translator
+from textblob import TextBlob
+import asyncio
+import time
+import re
 
 # Параметры подключения
 config = {
@@ -8,11 +13,13 @@ config = {
     'password': '102026102Rus',
     'database': 'online_shop'
 }
+
+
 # Подключаемся к MySQL
-connection = pymysql.connect(**config)
 
 
 def dataforvisual():
+    connection = pymysql.connect(**config)
     count = 0
     sum = 0
     population = []
@@ -42,6 +49,7 @@ def dataforvisual():
 
 def diffcounter():
     # Difference between 2017 and 2018 in total revenue and avg values minus failed transactions
+    connection = pymysql.connect(**config)
     with connection.cursor() as cursor:
         with open("revenue.sql", "r", encoding="utf-8") as file:
             result = file.read()
@@ -53,22 +61,94 @@ def diffcounter():
             print(
                 f"revenue growth: {round((gencounter - 1) * 100, 1)}% \navg value growth: {round((avgcounter - 1) * 100, 1)}% ")
         file.close()
+    connection.close()
 
 
-diffcounter()
-values = dataforvisual()
-sorted(values[0])
-sorted(values[1])
-
-connection = pymysql.connect(**config)
 def reviews_reader():
+    connection = pymysql.connect(**config)
     with connection.cursor() as cursor:
         with open("order_reviews.sql", "r", encoding="utf-8") as file:
             result = file.read()
             cursor.execute(result)
             result = cursor.fetchall()
+            reviews = []
             for row in result:
-                print(row[4])
+                reviews.append(row[4])
+            connection.close()
+            return reviews
+
+
+async def translate_reviews(reviews, src_lang='pt', dest_lang='en'):
+    translator = Translator()
+    with open("en_review.txt", "w", encoding="utf-8") as file:
+        for text in reviews:
+            try:
+                if len(text) > 1:
+                    translation = await translator.translate(text, src=src_lang, dest=dest_lang)
+                    file.write(translation.text + "\n")
+            except:
+                file.write("")  # в случае ошибки - пустая строка
         file.close()
-val = reviews_reader()
-print(val)
+
+
+category_keywords = {
+    'delivery': ['delivery', 'late', 'ship', 'arrive', 'courier', 'package', 'shipping'],
+    'quality': ['quality', 'broken', 'defective', 'damage', 'faulty', 'poor'],
+    'service': ['service', 'rude', 'customer support', 'manager', 'response', 'complaint'],
+    'price': ['price', 'expensive', 'cost', 'refund', 'payment', 'charge']
+}
+
+
+def detect_category(text):
+    text = text.lower()
+    for category, keywords in category_keywords.items():
+        if any(keyword in text for keyword in keywords):
+            return category
+    return 'other'
+
+
+def analyze_sentiment(text):
+    analysis = TextBlob(text)
+    return analysis.sentiment.polarity
+
+
+def count_complains():
+    with open("en_review.txt", "r", encoding="utf-8") as file:
+        reviews = file.read().strip()
+        reviews = reviews.split("\n")
+        category_counts = defaultdict(int)
+        # Диагностика тональности категории
+        # sentiment_scores = defaultdict(list)
+        for i in reviews:
+            if i.strip():
+                category = detect_category(i)
+                category_counts[category] += 1
+                # sentiment = analyze_sentiment(i)
+                # sentiment_scores[category].append(sentiment)
+    return category_counts
+
+
+def complains_viz_data():
+    data = count_complains()
+    complains_result = count_complains()
+    complains_sum = sum(complains_result.values())
+    percantage = defaultdict(float)
+    for key, value in data.items():
+        percantage[key] = round(float(value / complains_sum) * 100, 2)
+    return dict(percantage)
+
+
+# diffcounter()
+# values = dataforvisual()
+# sorted(values[0])
+# sorted(values[1])
+# reviews = reviews_reader()
+# start_time = time.time()
+# reviews = asyncio.run(translate_reviews(reviews, src_lang='pt', dest_lang='en'))
+# end_time = time.time()
+# elapsed_time = end_time - start_time
+# print(elapsed_time)
+
+category_counts = complains_viz_data()
+print("Done")
+print(category_counts.keys)
