@@ -17,10 +17,10 @@ in this dashboards you can notice pretty good dynamics of the total customers gr
 We can see a growth between 2017 and 2018 in 22% in total and 2% by average order check, that means that the company is developing but need to put more effort to increase the average check just like in first research.
 By using (values by city.sql) we can see the percentage difference between 2017 and 2018 for each city in detail, (https://github.com/user-attachments/assets/f40daf8e-5dfe-4441-8788-0c095a739e3a) (first 28 cities) in that photo for example we can see that the city of Sao Paulo showed a growth of 29.2% in the number of customers and 31.8% growth in the total sum of check, impressive isnt it? The second one, Rio De Janeiro showed much worse results, growth of 4.1% in the number of customers and growth of 1.5% in total sum of check. Besides the Rio there are 3 cities which showed less than 10% of customers growth, is really low accordingly to avg values and that means that this cities need more attention. 
  I can offer to Olist store next sollutions:
- #### 1. Targeted advertising in social media.
- #### 2. Increasing first order conversion.
- #### 3. Retention and repeat purchases (Retention): Email and SMS Marketing, loyalti program, personalized recomendations
- #### 4. Viral mechanics (Referral): bring friend and get discounts
+ ### 1. Targeted advertising in social media.
+ ### 2. Increasing first order conversion.
+ ### 3. Retention and repeat purchases (Retention): Email and SMS Marketing, loyalti program, personalized recomendations
+ ### 4. Viral mechanics (Referral): bring friend and get discounts
  And etc.
 
 Now look at avgnum growth, about 40% of negative values in the range of cities we have identified. next sollutions can help solve this problem:
