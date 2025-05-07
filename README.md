@@ -4,7 +4,7 @@ In short, i have 5 main goals for that project:
 - Perform an LTV cohort analysis
 - Building a sales funnel
 - Predict churn using classification
-- Run an A/B test to improve the conversion rate
+- Design and run A/B test to improve conversion rates
 - Build a dashboard (Streamlit)
 
 For first i downloaded dataset from Kaggle https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce and created sql table using python (CreateTheTable.py). 
