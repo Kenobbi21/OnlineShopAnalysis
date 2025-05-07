@@ -25,12 +25,12 @@ By using (values by city.sql) we can see the percentage difference between 2017 
 
 Now look at avgnum growth, about 40% of negative values in the range of cities we have identified. next sollutions can help solve this problem:
  
- #### 1. Offer to customers additional goods which can complement the main product
- #### 2. Upsell & Cross-sell or personalized recomendations, offer more expensive alternative 
- #### 3. Dynamic pricing and discounts, for example: "this is the last day you can buy this phone for only 500$ instead of 700$"
- #### 4. Improve UX/UI to encourage purchases, delete extra steps to buy something, for example you can add a button "buy now" instead of add to basket.
- #### 5. Loyalty and Subscription Programs
- #### 6. FOMO, put pressure on the buyer with a missed opportunity to make a good purchase.
+ ### 1. Offer to customers additional goods which can complement the main product
+ ### 2. Upsell & Cross-sell or personalized recomendations, offer more expensive alternative 
+ ### 3. Dynamic pricing and discounts, for example: "this is the last day you can buy this phone for only 500$ instead of 700$"
+ ### 4. Improve UX/UI to encourage purchases, delete extra steps to buy something, for example you can add a button "buy now" instead of add to basket.
+ ### 5. Loyalty and Subscription Programs
+ ### 6. FOMO, put pressure on the buyer with a missed opportunity to make a good purchase.
 
 ## 2. Building a sales funnel.
 - Now making a sales funnel. This database does not provide all necessary information for making full-fledged sales funnel so only way i can offer is count how much succesful orders do we have minus "unavaliable" and "canceled" orders. As a result(SalesFunnel.sql) 1.26% of unsuccesful orders and it is a great result compare to other marketplaces for comparison Amazon has 5-10% of it. 
