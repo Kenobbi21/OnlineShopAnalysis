@@ -93,7 +93,7 @@ On this stage i decided to make a A/B test, My hypothesis: free shipping will in
      - Targeted advertising
      - Referral programs
 ### 3.  Expected Outcomes
-If the proposed measures are implemented:
+#### If the proposed measures are implemented:
      - Repeat purchase rate: Increase from 3% to 10–15% within 1–2 years.
      - Churn rate reduction: Drop from 94% to 70–80%.
      - Higher average order value: 5–10% growth through cross-selling.
