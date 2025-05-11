@@ -51,7 +51,6 @@ def dataforvisual():
 
 
 def diffcounter():
-    # Difference between 2017 and 2018 in total revenue and avg values minus failed transactions
     connection = pymysql.connect(**config)
     with connection.cursor() as cursor:
         with open("revenue.sql", "r", encoding="utf-8") as file:
