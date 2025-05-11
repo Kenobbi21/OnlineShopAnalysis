@@ -110,7 +110,7 @@ If the proposed measures are implemented:
      - Stricter seller oversight:
        - Penalties for delivery delays and defective products.
 ### Final Verdict
-Olist has significant growth potential but requires systemic improvements in customer experience, logistics, and marketing. Key growth levers:
+#### Olist has significant growth potential but requires systemic improvements in customer experience, logistics, and marketing. Key growth levers:
      - Boosting customer loyalty.
      - Enhancing service quality.
      - Expanding into underserved regions.
