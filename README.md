@@ -75,7 +75,7 @@ On this stage i decided to make a A/B test, My hypothesis: free shipping will in
        - Product quality discrepancies.
        - Poor packaging.
 #### Regional Imbalances
-     - Revenue growth is concentrated in major cities (e.g., São Paulo: +31.8%), while other cities like Rio de Janeiro show weaker performance (+1.5–4.1%).
+     - Revenue growth is concentrated in some cities (e.g., São Paulo: +31.8%), while other cities like Rio de Janeiro show weaker performance (+1.5–4.1%).
 ### 2. Growth Opportunities
 #### Customer Retention
      - Loyalty programs
