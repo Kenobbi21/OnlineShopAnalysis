@@ -33,8 +33,8 @@ Now look at avgnum growth, about 40% of negative values in the range of cities w
  ### 6. FOMO, put pressure on the buyer with a missed opportunity to make a good purchase.
 
 ## 2. Building a sales funnel.
-- Now making a sales funnel. This database does not provide all necessary information for making full-fledged sales funnel so only way i can offer is count how much succesful orders do we have minus "unavaliable" and "canceled" orders. As a result(SalesFunnel.sql) 1.26% of unsuccesful orders and it is a great result compare to other marketplaces for comparison Amazon has 5-10% of it. 
-
+- Now making a sales funnel. This database does not provide all necessary information for making full-fledged sales funnel so only way i can offer is count how much succesful orders do we have minus "unavaliable" and "canceled" orders. As a result(SalesFunnel.sql) 1.26% of unsuccesful orders and it is a great result compare to other marketplaces for comparison Amazon has 5-10% of it.
+  
 ## 3. Predict churn using classification.
 Сonsidering low customers activity detected in first stages, we will consider the churn as less than 2 orders in a year by customer (predict_churn_using_classification.sql). After the first calculations i considered that max number of orders by customer is 33, but that is solitary instance as you can see here:(https://github.com/user-attachments/assets/21c2b1e3-8c34-4edc-b0c3-2c711e43dc86). 2550 is a number of customers who made more than 2 orders for 2017, when total number is 42136 and we get 6% of customers who made at least 2 orders. Sure if i would work with marketplaces which have had better results i would make more detailed analysis, for example by months, but here it is simply not necessary. At Result we can compare Olists results with results of other marketplaces Amazon,Ozon,Wildberries and etc, for example Amazon (which statistics you can find here)(https://ir.aboutamazon.com/annual-reports-proxies-and-shareholder-letters/default.aspx) shows 10-25% of churn yearly. Therefore, to understand the reasons of that result, we can read reviews of various products, I have chosen a range of ratings from 1 to 3 which makes up 29.76% of the total ratings while the Amazon has 15-25%. To make definition of complains categories easier i`ve made some functions in "main.py" (translate_reviews, detect_category, analyze_sentiment, count_complains, complains_viz_data) After anylising the data i got of selected range of comments, i came to the conclusion that the majority of negative reviews are complaints about: long delivery times, the actual number of units received does not correspond to the ordered quantity, discrepancy between the declared quality of the goods, inappropriate packaging. (https://github.com/user-attachments/assets/d2a8267a-f271-4bd2-86bc-6fb6feabf531) - Here you can see a pie chart ("visuzlization.py", circle_drawer) with the detailed percentage of each complaint category. As a result the problem is systematic, 94% of all customers leave the Olists store. 
 
@@ -60,3 +60,13 @@ And as a result to reduce negative customer experience, the marketplace needs to
     - Strictly control sellers (fines, blocking).   
     - Invest in logistics and automation (AI, scanners, chatbots).
     - Provide transparency to buyers (tracking, guarantees).
+
+## 4. Design and run A/B test to improve conversion rates.
+On this stage i decided to make a A/B test, My hypothesis: free shipping will increase conversion by 10%. For first i took "orders.sql" and disband almost 100k of customers on two groups (a,b) ("main.py", AB_test), if we want to count conversion we should count views, in that dataframe we dont have that information so i took avg values which is in area of 50 views on 1 purchase also i found out an each group orders count. After all the calculations, we actually get a 10% increase in conversion. However, it should be taken into account that the situation is modeled due to the lack of real data, but all values are selected based on average statistical values. 
+
+## In conclusion of my research, I would like to highlight the positive and negative aspects of my assessment:
+### 1. Challenges and Risks
+#### Low Customer Retention
+     - Only 3% of customers make repeat purchases.
+     - 94% of users leave after their first order (high churn rate).
+     - The average order value is growing slowly (+2% per year), indicating weak monetization of the existing customer base.
