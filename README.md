@@ -64,9 +64,55 @@ And as a result to reduce negative customer experience, the marketplace needs to
 ## 4. Design and run A/B test to improve conversion rates.
 On this stage i decided to make a A/B test, My hypothesis: free shipping will increase conversion by 10%. For first i took "orders.sql" and disband almost 100k of customers on two groups (a,b) ("main.py", AB_test), if we want to count conversion we should count views, in that dataframe we dont have that information so i took avg values which is in area of 50 views on 1 purchase also i found out an each group orders count. After all the calculations, we actually get a 10% increase in conversion. However, it should be taken into account that the situation is modeled due to the lack of real data, but all values are selected based on average statistical values. 
 
-## In conclusion of my research, I would like to highlight the positive and negative aspects of my assessment:
+## In conclusion of my research, I would like to highlight next aspects of my assessment:
 ### 1. Challenges and Risks
 #### Low Customer Retention
      - Only 3% of customers make repeat purchases.
      - 94% of users leave after their first order (high churn rate).
      - The average order value is growing slowly (+2% per year), indicating weak monetization of the existing customer base.
+#### Service Quality Issues
+     - 29.76% of negative reviews (compared to 15–25% for Amazon).
+     - Main complaints:
+       - Long delivery times.
+       - Missing items in orders.
+       - Product quality discrepancies.
+       - Poor packaging.
+#### Regional Imbalances
+     - Revenue growth is concentrated in major cities (e.g., São Paulo: +31.8%), while other cities like Rio de Janeiro show weaker performance (+1.5–4.1%).
+### 2. Growth Opportunities
+#### Customer Retention
+     - Loyalty programs
+     - Personalization
+     - Service improvements
+     - the majority of the economically active population of the country where the marketplace is located are not its clients.
+#### Increasing Average Order Value
+     - Cross-selling and upselling
+     - Dynamic pricing
+     - Personalization
+####  Logistics Optimization
+     - Localized warehouses
+     - AI-powered review analysis
+#### Marketing
+     - Targeted advertising
+     - Referral programs
+### 3.  Expected Outcomes
+If the proposed measures are implemented:
+     - Repeat purchase rate: Increase from 3% to 10–15% within 1–2 years.
+     - Churn rate reduction: Drop from 94% to 70–80%.
+     - Higher average order value: 5–10% growth through cross-selling.
+     - Fewer negative reviews: Decrease from 29.76% to 15–20%.
+### 4. Priority Action Plan
+     - Launch A/B tests:
+       - Free shipping for orders above a certain threshold.
+       - Redesigned product pages with highlighted reviews.
+     - Invest in logistics:
+       - Partnerships with local courier services.
+     - Stricter seller oversight:
+       - Penalties for delivery delays and defective products.
+### Final Verdict
+Olist has significant growth potential but requires systemic improvements in customer experience, logistics, and marketing. Key growth levers:
+     - Boosting customer loyalty.
+     - Enhancing service quality.
+     - Expanding into underserved regions.
+With proper execution, Olist could compete with major players like Mercado Libre or Amazon in Latin America. 
+     
