@@ -1,4 +1,7 @@
 import pymysql
+import numpy as np
+import pandas as pd
+from sqlalchemy import create_engine
 from collections import defaultdict
 from googletrans import Translator
 from textblob import TextBlob
@@ -91,15 +94,13 @@ async def translate_reviews(reviews, src_lang='pt', dest_lang='en'):
         file.close()
 
 
-category_keywords = {
-    'delivery': ['delivery', 'late', 'ship', 'arrive', 'courier', 'package', 'shipping'],
-    'quality': ['quality', 'broken', 'defective', 'damage', 'faulty', 'poor'],
-    'service': ['service', 'rude', 'customer support', 'manager', 'response', 'complaint'],
-    'price': ['price', 'expensive', 'cost', 'refund', 'payment', 'charge']
-}
-
-
 def detect_category(text):
+    category_keywords = {
+        'delivery': ['delivery', 'late', 'ship', 'arrive', 'courier', 'package', 'shipping'],
+        'quality': ['quality', 'broken', 'defective', 'damage', 'faulty', 'poor'],
+        'service': ['service', 'rude', 'customer support', 'manager', 'response', 'complaint'],
+        'price': ['price', 'expensive', 'cost', 'refund', 'payment', 'charge']
+    }
     text = text.lower()
     for category, keywords in category_keywords.items():
         if any(keyword in text for keyword in keywords):
@@ -138,6 +139,27 @@ def complains_viz_data():
     return dict(percantage)
 
 
+def AB_test():
+    engine = create_engine(f"mysql+pymysql://{config['user']}:{config['password']}@{config['host']}/{config['database']}")
+    with open("orders.sql", "r", encoding="utf-8") as file:
+        data = file.read()
+        df = pd.read_sql(data,engine)
+        customers = df["customer_id"]
+        group_a = np.random.choice(customers, size=len(customers) // 2, replace=False)
+        group_b = np.array([c for c in customers if c not in group_a])
+        orders_count = df['orders_order_id'].nunique()
+        views = orders_count * 50
+        conversion = (orders_count / views) * 100
+        orders_a = df[df['customer_id'].isin(group_a)]
+        orders_b_count = int(len(orders_a) * 1.1)
+        views_a = views / 2
+        views_b = views / 2
+        conv_a = (len(orders_a) / views_a) * 100# ~0.2%
+        conv_b = (orders_b_count / views_b) * 100# ~0.22% (+10%)
+        print(conv_a)
+        print(conv_b)
+
+
 # diffcounter()
 # values = dataforvisual()
 # sorted(values[0])
@@ -149,6 +171,11 @@ def complains_viz_data():
 # elapsed_time = end_time - start_time
 # print(elapsed_time)
 
-category_counts = complains_viz_data()
-print("Done")
-print(category_counts.keys)
+# category_counts = complains_viz_data()
+# print("Done")
+# print(category_counts.keys)
+start_time = time.time()
+AB_test()
+end_time = time.time()
+elapsed_time = end_time - start_time
+print(elapsed_time)
