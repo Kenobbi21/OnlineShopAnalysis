@@ -11,9 +11,9 @@ import re
 
 # Параметры подключения
 config = {
-    'host': 'localhost',
-    'user': 'RUSEL',
-    'password': '102026102Rus',
+    'host': '*******',
+    'user': '*****',
+    'password': '***********',
     'database': 'online_shop'
 }
 
